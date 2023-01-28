@@ -4,27 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        ProgramInst();
-        Console.Write("What would you like to do? ");
-        Choices();
-    }
-
-    static void ProgramInst()
-    {
         Console.WriteLine("Welcome to the Journal Program");
-        // Utilizing a multiple line string for program instruction
-        Console.WriteLine(@"Please Select one of the following choices:
-        1. Write
-        2. Display
-        3. Load
-        4. Save
-        5. Quit");
-    }
-
-    static void Choices()
-    {
-        int choice = int.Parse(Console.ReadLine());
-        do
+        ProgramInst();
+        
+        while (true)
         {
             if (choice == 5)
             {
@@ -32,7 +15,9 @@ class Program
             }
             else if (choice == 1)
             {
-
+                //Instance of the PromptGenerator
+                 PromptGenerator prompt = new PromptGenerator();
+                prompt.RandomPrompt();
             }
             else if (choice == 2)
             {
@@ -52,7 +37,27 @@ class Program
                 // Additional instruction incase of wrong input
                 Console.WriteLine("Please, try to enter from 1-5");
             }
-        } while (true);
+        }
+    }
+
+    static void ProgramInst()
+    {
+        // Utilizing a multiple line string for program instruction
+        Console.Write(@"Please Select one of the following choices:
+        1. Write
+        2. Display
+        3. Load
+        4. Save
+        5. Quit
+        What would you like to do? ");
+        int choice = int.Parse(Console.ReadLine());
+        if (choice < 1 || choice > 5)
+        {
+            Console.WriteLine("Please, try to enter from 1-5");
+        }
+
+        
+        ProgramInst();
     }
 }
 
