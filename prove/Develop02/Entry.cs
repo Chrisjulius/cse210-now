@@ -7,13 +7,10 @@ public class Entry
     {
 
     }
-
-    public List<string> _entries = new List<string>();
-    public string _entry = Console.ReadLine();
+    PromptGenerator promptGenerator = new PromptGenerator();
 
     public void Display()
     {
-        PromptGenerator promptGenerator = new PromptGenerator();
-        promptGenerator.RandomPrompt();
+       promptGenerator.RandomPrompt();
     }
 }

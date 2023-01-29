@@ -18,6 +18,8 @@ public class PromptGenerator
         "What are you grateful for today?",
         "What lesson did you learn from today?"
     };
+
+    public string _randomPrompt = RandomPrompt();
     
     public string RandomPrompt()
     {
