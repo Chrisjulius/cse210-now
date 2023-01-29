@@ -18,12 +18,11 @@ public class PromptGenerator
         "What are you grateful for today?",
         "What lesson did you learn from today?"
     };
-    public string _givenPrompt = "";
     
-    public void RandomPrompt()
+    public string RandomPrompt()
     {
         Random prompt = new Random();
         string output = String.Format("{0}\n> ", _prompt[prompt.Next(0, _prompt.Count)]);
-        Console.Write(output);
+        return output;
     }
 }
