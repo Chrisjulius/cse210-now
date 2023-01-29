@@ -6,38 +6,6 @@ class Program
     {
         Console.WriteLine("Welcome to the Journal Program");
         ProgramInst();
-        
-        while (true)
-        {
-            if (choice == 5)
-            {
-                Environment.Exit(0);
-            }
-            else if (choice == 1)
-            {
-                //Instance of the PromptGenerator
-                 PromptGenerator prompt = new PromptGenerator();
-                prompt.RandomPrompt();
-            }
-            else if (choice == 2)
-            {
-
-            }
-            else if (choice == 3)
-            {
-
-            }
-            else if (choice == 4)
-            {
-                
-            }
-
-            else
-            {
-                // Additional instruction incase of wrong input
-                Console.WriteLine("Please, try to enter from 1-5");
-            }
-        }
     }
 
     static void ProgramInst()
@@ -50,13 +18,34 @@ class Program
         4. Save
         5. Quit
         What would you like to do? ");
-        int choice = int.Parse(Console.ReadLine());
-        if (choice < 1 || choice > 5)
+        // to catch any error from user's input
+        try
         {
-            Console.WriteLine("Please, try to enter from 1-5");
+            int choice = int.Parse(Console.ReadLine());
+             // Utilizing a switch...case...default to validate user input and to run program objects
+            switch (choice)
+            {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                // default to assist user in case of wrong input    
+                default:
+                    break;                    
+            }
         }
 
-        
+        catch (Exception e)
+        {
+            Console.WriteLine("Something went wrong! Try inputting a number from 1-5; see instruction above");
+        }
+
         ProgramInst();
     }
 }
