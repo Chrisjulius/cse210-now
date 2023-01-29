@@ -34,9 +34,12 @@ class Program
                 case 4:
                     break;
                 case 5:
+                    Console.Write("Thank you!");
+                    System.Environment.Exit(0); // Proper exit from the program
                     break;
                 // default to assist user in case of wrong input    
                 default:
+                    Console.WriteLine("Please, input a number from 1-5 to proceed");
                     break;                    
             }
         }
