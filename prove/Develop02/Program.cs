@@ -12,12 +12,12 @@ class Program
     {
         // Utilizing a multiple line string for program instruction
         Console.Write(@"Please Select one of the following choices:
-        1. Write
-        2. Display
-        3. Load
-        4. Save
-        5. Quit
-        What would you like to do? ");
+1. Write
+2. Display
+3. Load
+4. Save
+5. Quit
+What would you like to do? ");
         // to catch any error from user's input
         try
         {
