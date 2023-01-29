@@ -1,11 +1,18 @@
 using System;
+using System.IO;
+using System.Text;
+using System.Collections.Generic;
 
 class Program
 {
+    
     static void Main(string[] args)
     {
+        Ent
         Console.WriteLine("Welcome to the Journal Program");
         ProgramInst();
+
+        
     }
 
     static void ProgramInst()
@@ -50,6 +57,18 @@ What would you like to do? ");
         }
 
         ProgramInst();
+    }
+
+    static void CollectEntries()
+    {
+        PromptGenerator promptGenerator = new PromptGenerator();
+        string prompt = promptGenerator.RandomPrompt();
+        string userEntry = Console.ReadLine();
+
+        DateTime theCurrentTime = DateTime.Now;
+        string dateText = theCurrentTime.ToShortDateString();
+
+
     }
 }
 

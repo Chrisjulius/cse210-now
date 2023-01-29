@@ -1,16 +1,17 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 
 public class Entry
 {
-    public Entry()
+    public string Prompt;
+    public string UserEntry;
+    public string EntryDate;
+    public Entry(string Prompt, string UserEntry, string EntryDate)
     {
-
-    }
-    PromptGenerator promptGenerator = new PromptGenerator();
-
-    public void Display()
-    {
-       promptGenerator.RandomPrompt();
+        this.Prompt = Prompt;
+        this.UserEntry = UserEntry;
+        this.EntryDate = EntryDate;
     }
 }
