@@ -39,8 +39,7 @@ What would you like to do? ");
                         DateTime theCurrentTime = DateTime.Now;
                         string dateText = theCurrentTime.ToShortDateString();
 
-                        string line = @$"{prompt}
-                        {userEntry} -- {dateText}";
+                        string line = @$"{prompt} {userEntry} -- {dateText}";
                         entry.Add(line);
                         break;
                     case 2:
@@ -53,8 +52,8 @@ What would you like to do? ");
                         break;
                     case 4:
                         Console.Write("What will you save the file as (.txt): ");
-                        instanceJournal._file = Console.ReadLine();
-                        instanceJournal.Write();
+                        instanceJournal._saveFile = Console.ReadLine();
+                        instanceJournal.Write(entry);
                         break;
                     case 5:
                         Console.Write("Thank you!");

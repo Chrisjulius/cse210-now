@@ -10,22 +10,21 @@ public class Journal
          
     }
 
-    public string _file = "";
-    public void CollectEntries()
-    {
-        /*
-        PromptGenerator promptGenerator = new PromptGenerator();
-        string prompt = promptGenerator.RandomPrompt();
-        Console.Write(prompt);
-        string userEntry = Console.ReadLine();
+    public string _saveFile = "";
+    public string _loadFile = "";
 
-        DateTime theCurrentTime = DateTime.Now;
-        string dateText = theCurrentTime.ToShortDateString();
-        */
-    }
-
-    public void Write()
+    public void Write(List<string> myEntry)
     {
+        string fileName = _saveFile;
         
+        using (StreamWriter outputFile = new StreamWriter(fileName))
+        {
+            foreach (string item in myEntry)
+            {
+                outputFile.WriteLine(item);
+            }  
+        }
     }
+
+    public void
 }
