@@ -51,7 +51,7 @@ What would you like to do? ");
                     case 3:
                         Console.Write("Enter in the name of the file as (.txt): ");
                         instanceJournal._loadFile = Console.ReadLine();
-                        instanceJournal.Read();
+                        instanceJournal.Read(entry);
                         break;
                     case 4:
                         Console.Write("What will you save the file as (.txt): ");
