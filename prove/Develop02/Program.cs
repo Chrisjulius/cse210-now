@@ -81,7 +81,9 @@ What would you like to do? ");
 }
 
 /* 
-To account for creativity on this Program.cs see the above comment
- other features exceeding requirements are:
+To account for creativity on this Program.cs:
+- The use of switch...case to iterate program as needed by user
+- Use System.Environment.Exit(0) to exit program
+- Try...catch to handle an error from user during the program
  
  */
