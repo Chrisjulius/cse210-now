@@ -26,5 +26,14 @@ public class Journal
         }
     }
 
-    public void
+    public void Read()
+    {
+        string fileName = _loadFile;
+        string[] lines = System.IO.File.ReadAllLines(fileName);
+
+        foreach (string line in lines)
+        {
+            Console.WriteLine(line);
+        }
+    }
 }

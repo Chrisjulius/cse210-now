@@ -39,7 +39,7 @@ What would you like to do? ");
                         DateTime theCurrentTime = DateTime.Now;
                         string dateText = theCurrentTime.ToShortDateString();
 
-                        string line = @$"{prompt} {userEntry} -- {dateText}";
+                        string line = @$"Date: {dateText} - Prompt: {prompt}\n{userEntry}\n";
                         entry.Add(line);
                         break;
                     case 2:
@@ -49,6 +49,9 @@ What would you like to do? ");
                         }
                         break;
                     case 3:
+                        Console.Write("Enter in the name of the file as (.txt): ");
+                        instanceJournal._loadFile = Console.ReadLine();
+                        instanceJournal.Read();
                         break;
                     case 4:
                         Console.Write("What will you save the file as (.txt): ");
@@ -68,7 +71,7 @@ What would you like to do? ");
 
             catch (Exception e)
             {
-                Console.WriteLine("Something went wrong! Try inputting a number from 1-5; see instruction above");
+                Console.WriteLine("Something went wrong! Please follow the instructions.");
             }
         }
         
