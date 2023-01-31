@@ -14,4 +14,17 @@ public class Entry
         this.UserEntry = UserEntry;
         this.EntryDate = EntryDate;
     }
+
+    public string GetPrompt
+    {
+        get{return Prompt;}
+    }
+    public string GetUserEntry
+    {
+        get{return UserEntry;}
+    }
+    public string GetEntryDate
+    {
+        get{return EntryDate;}
+    }
 }

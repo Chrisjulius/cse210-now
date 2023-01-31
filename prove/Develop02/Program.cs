@@ -8,7 +8,6 @@ class Program
     
     static void Main(string[] args)
     {
-        Ent
         Console.WriteLine("Welcome to the Journal Program");
         ProgramInst();
 
@@ -17,6 +16,7 @@ class Program
 
     static void ProgramInst()
     {
+        Journal instanceJournal = new Journal();
         // Utilizing a multiple line string for program instruction
         Console.Write(@"Please Select one of the following choices:
 1. Write
@@ -33,12 +33,20 @@ What would you like to do? ");
             switch (choice)
             {
                 case 1:
+                    instanceJournal.CollectEntries();
                     break;
                 case 2:
+                    foreach (var item in instanceJournal.listEntry)
+                    {
+                        Console.WriteLine(item);
+                    }
                     break;
                 case 3:
                     break;
                 case 4:
+                    Console.Write("What will you save the file as (.csv): ");
+                    instanceJournal._file = Console.ReadLine();
+                    instanceJournal.Write();
                     break;
                 case 5:
                     Console.Write("Thank you!");
@@ -57,18 +65,6 @@ What would you like to do? ");
         }
 
         ProgramInst();
-    }
-
-    static void CollectEntries()
-    {
-        PromptGenerator promptGenerator = new PromptGenerator();
-        string prompt = promptGenerator.RandomPrompt();
-        string userEntry = Console.ReadLine();
-
-        DateTime theCurrentTime = DateTime.Now;
-        string dateText = theCurrentTime.ToShortDateString();
-
-
     }
 }
 
