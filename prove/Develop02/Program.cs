@@ -39,7 +39,8 @@ What would you like to do? ");
                         DateTime theCurrentTime = DateTime.Now;
                         string dateText = theCurrentTime.ToShortDateString();
 
-                        string line = @$"Date: {dateText} - Prompt: {prompt}\n{userEntry}\n";
+                        string line = @$"Date: {dateText} - Prompt: {prompt} {userEntry}
+";
                         entry.Add(line);
                         break;
                     case 2:
