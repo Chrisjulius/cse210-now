@@ -5,66 +5,74 @@ using System.Collections.Generic;
 
 class Program
 {
-    
     static void Main(string[] args)
     {
-        Console.WriteLine("Welcome to the Journal Program");
-        ProgramInst();
-
-        
-    }
-
-    static void ProgramInst()
-    {
         Journal instanceJournal = new Journal();
-        // Utilizing a multiple line string for program instruction
-        Console.Write(@"Please Select one of the following choices:
+        List<string> entry = new List<string>();
+        Console.WriteLine("Welcome to the Journal Program");
+        
+        while (true)
+        {
+            // Utilizing a multiple line string for program instruction
+            Console.Write(@"Please Select one of the following choices:
 1. Write
 2. Display
 3. Load
 4. Save
 5. Quit
 What would you like to do? ");
+
         // to catch any error from user's input
-        try
-        {
-            int choice = int.Parse(Console.ReadLine());
-             // Utilizing a switch...case...default to validate user input and to run program objects
-            switch (choice)
+            try
             {
-                case 1:
-                    instanceJournal.CollectEntries();
-                    break;
-                case 2:
-                    foreach (var item in instanceJournal.listEntry)
-                    {
-                        Console.WriteLine(item);
-                    }
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    Console.Write("What will you save the file as (.csv): ");
-                    instanceJournal._file = Console.ReadLine();
-                    instanceJournal.Write();
-                    break;
-                case 5:
-                    Console.Write("Thank you!");
-                    System.Environment.Exit(0); // Proper exit from the program
-                    break;
-                // default to assist user in case of wrong input    
-                default:
-                    Console.WriteLine("Please, input a number from 1-5 to proceed");
-                    break;                    
+                int choice = int.Parse(Console.ReadLine());
+                // Utilizing a switch...case...default to validate user input and to run program objects
+                switch (choice)
+                {
+                    case 1:
+                        PromptGenerator promptGenerator = new PromptGenerator();
+                        string prompt = promptGenerator.RandomPrompt();
+                        Console.Write(prompt);
+
+                        string userEntry = Console.ReadLine();
+
+                        DateTime theCurrentTime = DateTime.Now;
+                        string dateText = theCurrentTime.ToShortDateString();
+
+                        string line = @$"{prompt}
+                        {userEntry} -- {dateText}";
+                        break;
+                    case 2:
+                        foreach (string item in entry)
+                        {
+                            Console.WriteLine(item);
+                        }
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        Console.Write("What will you save the file as (.txt): ");
+                        instanceJournal._file = Console.ReadLine();
+                        instanceJournal.Write();
+                        break;
+                    case 5:
+                        Console.Write("Thank you!");
+                        System.Environment.Exit(0); // Proper exit from the program
+                        break;
+                    // default to assist user in case of wrong input    
+                    default:
+                        Console.WriteLine("Please, input a number from 1-5 to proceed");
+                        break;                    
+                }
+            }
+
+            catch (Exception e)
+            {
+                Console.WriteLine("Something went wrong! Try inputting a number from 1-5; see instruction above");
             }
         }
-
-        catch (Exception e)
-        {
-            Console.WriteLine("Something went wrong! Try inputting a number from 1-5; see instruction above");
-        }
-
-        ProgramInst();
+        
+        
     }
 }
 
