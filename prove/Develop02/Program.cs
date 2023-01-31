@@ -41,6 +41,7 @@ What would you like to do? ");
 
                         string line = @$"{prompt}
                         {userEntry} -- {dateText}";
+                        entry.Add(line);
                         break;
                     case 2:
                         foreach (string item in entry)
