@@ -70,7 +70,7 @@ What would you like to do? ");
                 }
             }
 
-            catch (Exception e)
+            catch (Exception)
             {
                 Console.WriteLine("Something went wrong! Please follow the instructions.");
             }
