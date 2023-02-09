@@ -19,23 +19,23 @@ public class Reference
     {
         _book = book;
         _chapter = chapter;
-        _verseStart = verseStart
+        _verseStart = verseStart;
         _verseEnd = verseEnd;
     }
 
     public string ScriptureReference()
     {
-        string ref;
+        string reference = "";
 
         if (_verseEnd == 0)
         {
-            ref = $"{_book} {_chapter}:{_verseStart}";
-            return ref;
+            reference = $"{_book} {_chapter}:{_verseStart}";
+            return reference;
         }
         else
         {
-            ref = $"{_book} {_chapter}:{_verseStart}-{verseEnd}";
-            return ref;    
+            reference = $"{_book} {_chapter}:{_verseStart}-{_verseEnd}";
+            return reference;    
         }
     }
 }
