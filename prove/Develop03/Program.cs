@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Word verseList = new Word();
-        verseList.Words();
+        Scripture myScript = new Scripture();
+        myScript.SetRenderRef();
     }
 }
