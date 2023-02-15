@@ -5,13 +5,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Clear();
         Scripture stateRef = new Scripture();
-        Console.WriteLine($"{stateRef.GetRenderRef()} {stateRef.GetRenderPassage()}");
-
-        Console.WriteLine(@"
-Please enter to continue or type 'quit' to finish:
-");
+        stateRef.newLine();
         
         while (true)
         {
@@ -28,3 +23,8 @@ Please enter to continue or type 'quit' to finish:
         }
     }
 }
+
+/*
+Action performed to exceed requirement:
+- random words selected are not repeated twice done in the Scripture class (Scripture.cs)
+*/

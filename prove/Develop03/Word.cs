@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 
+//Holds my scripture passage to memorize
 public class Word
 {
     private string _verseLine;
@@ -11,7 +12,7 @@ public class Word
         _listVerseLine = Words();
     }
 
-    public List<string> Words()
+    public List<string> Words() //convert scripture verse to a list (used by Scripture class)
     {
         List<string> result = new List<string>(_verseLine.Split(" "));
         return result;

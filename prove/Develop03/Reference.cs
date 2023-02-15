@@ -15,7 +15,7 @@ public class Reference
         _verseStart = verseStart;
     }
 
-    public Reference(string book, int chapter, int verseStart, int verseEnd)
+    public Reference(string book, int chapter, int verseStart, int verseEnd) // Constructor to accomodate multiple verse scripture passage
     {
         _book = book;
         _chapter = chapter;
@@ -23,6 +23,7 @@ public class Reference
         _verseEnd = verseEnd;
     }
 
+// public method to render scripture references according to verse type (single or multiple)
     public string ScriptureReference()
     {
         string reference = "";
