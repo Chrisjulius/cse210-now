@@ -15,7 +15,7 @@ public class Scripture
     public void newLine()
     {
         Console.Clear();
-        Console.WriteLine($"{_renderRef} {String.Join(" ", _passageList)}");
+        Console.WriteLine($"{GetRenderRef()} {String.Join(" ", _passageList)}");
         Console.WriteLine(@"
 Please enter to continue or type 'quit' to finish:
 ");

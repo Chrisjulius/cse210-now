@@ -6,6 +6,7 @@ class Program
     static void Main(string[] args)
     {
         Scripture stateRef = new Scripture();
+        Reference myRef = new Reference("Proverbs", 3, 5, 6);
         stateRef.newLine();
         
         while (true)
