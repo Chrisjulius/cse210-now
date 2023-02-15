@@ -6,6 +6,7 @@ public class Scripture
     private string _renderRef;
     private List<string> _passageList = new Word().Words();
     private List<int> _index = new List<int>();
+    private string _clear = "______";
     public Scripture()
     {
         
@@ -18,6 +19,15 @@ public class Scripture
         return _renderRef;
     }
 
+    public string GetClear()
+    {
+        return _clear;
+    }
+
+    public List<string> GetPassageList()
+    {
+        return _passageList;
+    }
     public string GetRenderPassage()
     {
         return String.Join(" ", _passageList);
@@ -38,12 +48,27 @@ public class Scripture
                     if (!(_index.Contains(randomIndex)))
                     {
                         _index.Add(randomIndex);
-                        _passageList[randomIndex] = "______";
+                        _passageList[randomIndex] = _clear;
                     }
                 }
             }
         }
+
+        var result = new List<string>(Enumerable.Repeat(_clear, _passageList.Count));
+        if (result == _passageList)
+        {
+            System.Environment.Exit(0); 
+        }
+
+        newLine();
+    }
+
+    private void newLine()
+    {
         Console.Clear();
-        Console.WriteLine(String.Join(" ", _passageList));
+        Console.WriteLine($"{_renderRef} {String.Join(" ", _passageList)}");
+        Console.WriteLine(@"
+Please enter to continue or type 'quit' to finish:
+");
     }
 }    
