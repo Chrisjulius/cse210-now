@@ -24,7 +24,7 @@ public class ReflectionActivity : Activity
         "Think of a time when you did something truly selfless."
     };
 
-    public ReflectionActivity(string duration, string activityName, string description) : base(duration, activityName, description)
+    public ReflectionActivity(string activityName, string description) : base(activityName, description)
     {
 
     }

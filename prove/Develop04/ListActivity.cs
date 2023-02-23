@@ -5,7 +5,7 @@ public class ListActivity : Activity
 {
     private int _entryCount;
     
-    public ListActivity(int entryCount, string duration, string activityName, string description) : base(duration, activityName, description)
+    public ListActivity(int entryCount, string duration, string activityName, string description) : base(activityName, description)
     {
         _entryCount = entryCount;
     }

@@ -7,9 +7,8 @@ public class Activity
     private string _activityName;
     private string _description;
 
-    public Activity(string duration, string activityName, string description)
+    public Activity(string activityName, string description)
     {
-        _duration = duration;
         _activityName = activityName;
         _description = description;
     }
@@ -30,5 +29,16 @@ public class Activity
     public void CountdownPause()
     {
         
+    }
+
+    public string SetDuration(string set)
+    {
+        _duration = set;
+        return _duration;
+    }
+
+    public string GetDuration()
+    {
+        return _duration;
     }
 }
