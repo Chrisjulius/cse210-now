@@ -12,13 +12,35 @@ class Program
 
         Console.Write("Select a choice from the menu: ");
         string selection = Console.ReadLine();
-        ProgramSelection();
+        ProgramSelection(selection);
     }
 
-    static void ProgramSelection()
+    static void ProgramSelection(string selection)
     {
         ListActivity mindfulList = new ListActivity();
         ReflectionActivity mindfulReflect = new ReflectionActivity();
         BreathingActivity mindfulBreathing = new BreathingActivity();
+
+        try
+        {
+            switch (selection)
+            {
+                case "1":
+                    break;
+                case "2":
+                    break;
+                case "3":
+                    break;
+                case "4":
+                    System.Environment.Exit(0);
+                    break;
+
+            }
+        }
+
+        catch (Exception)
+        {
+            Console.WriteLine("Please try again and follow the instruction.");
+        }    
     }
 }
