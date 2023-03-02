@@ -45,6 +45,7 @@ public class ListActivity : Activity
         Console.WriteLine($"You listed {_entryCount} items!\n\n");
 
         ConcludeMsg();
+
     }
 
     private string GetPrompt()

@@ -59,7 +59,7 @@ You may begin in: ");
             DateTime end = now.AddSeconds(GetDuration());
             while (DateTime.Now < end)
             {
-                Console.Write($"> {GetQuestion()}? ");
+                Console.Write($"> {GetQuestion()}");
                 SpinnerPause(15);
                 Console.WriteLine("");
             }
@@ -124,7 +124,7 @@ You may begin in: ");
         
 
         //String formatting to output random prompt
-        string output = String.Format("--- {0} ---", _question[randomIndex]);
+        string output = String.Format("{0}", _question[randomIndex]);
         return output;
     }
 
