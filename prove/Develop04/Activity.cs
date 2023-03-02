@@ -21,7 +21,7 @@ public class Activity
 
     }
 
-    public void SpinnerPause()
+    public void SpinnerPause(int duration)
     {
         List<string> spinner = new List<string>();
         spinner.Add("|");
@@ -34,7 +34,7 @@ public class Activity
         spinner.Add("\\");
 
         DateTime start = DateTime.Now;
-        DateTime end = start.AddSeconds(5);
+        DateTime end = start.AddSeconds(duration);
 
         int i = 0;
 
@@ -93,14 +93,30 @@ public class Activity
         return _description;
     }
 
+    public void CommenceMsg(string activity, string description)
+    {
+        SetActivityName(activity);
+        Console.WriteLine($"Welcome to the {GetActivityName()}.\n");
+
+        SetDescription(description + "\n");
+
+        Console.Write("How long, in seconds, would you like for your session? ");
+        SetDuration(Console.ReadLine());
+        Console.Clear();
+
+        Console.WriteLine("Get Ready...");
+        SpinnerPause(5);
+        Console.WriteLine("\n");
+    }
+
     public void ConcludeMsg()
     {
         Console.WriteLine("Well done!!");
-        SpinnerPause();
+        SpinnerPause(5);
         Console.WriteLine("");
 
         Console.WriteLine($"You have completed another {GetDuration()} seconds of the {GetActivityName()}.");
-        SpinnerPause();
+        SpinnerPause(5);
     }
 
 

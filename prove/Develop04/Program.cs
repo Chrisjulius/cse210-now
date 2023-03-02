@@ -34,6 +34,7 @@ class Program
                     mindfulBreathing.Breath();
                     break;
                 case "2":
+                    mindfulReflect.Reflection();
                     break;
                 case "3":
                     break;
