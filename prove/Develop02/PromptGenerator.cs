@@ -22,6 +22,7 @@ public class PromptGenerator
     public string RandomPrompt()
     {
         Random prompt = new Random();
+        //String formatting to output random prompt
         string output = String.Format("{0}\n> ", _prompt[prompt.Next(0, _prompt.Count)]);
         return output;
     }
