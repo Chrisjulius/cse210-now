@@ -93,5 +93,15 @@ public class Activity
         return _description;
     }
 
+    public void ConcludeMsg()
+    {
+        Console.WriteLine("Well done!!");
+        SpinnerPause();
+        Console.WriteLine("");
+
+        Console.WriteLine($"You have completed another {GetDuration()} seconds of the {GetActivityName()}.");
+        SpinnerPause();
+    }
+
 
 }

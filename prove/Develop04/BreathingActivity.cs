@@ -24,14 +24,23 @@ public class BreathingActivity : Activity
         Console.Clear();
         Console.WriteLine("Get Ready...");
         SpinnerPause();
-
         Console.WriteLine("\n");
-        Console.Write("Breathe in... ");
-        CountdownPause();
 
-        Console.WriteLine("");
-        Console.Write("Now breathe out... ");
-        CountdownPause();
+
+        DateTime now = DateTime.Now;
+        DateTime end = now.AddSeconds(GetDuration());
+        while (DateTime.Now < end)
+        {
+            Console.Write("Breathe in... ");
+            CountdownPause();
+
+            Console.WriteLine("");
+            Console.Write("Now breathe out... ");
+            CountdownPause();
+            Console.WriteLine("");
+        }
+
+        ConcludeMsg();
 
 
     }
