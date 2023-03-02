@@ -37,6 +37,7 @@ class Program
                     mindfulReflect.Reflection();
                     break;
                 case "3":
+                    mindfulList.Listing();
                     break;
                 case "4":
                     System.Environment.Exit(0);
