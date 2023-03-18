@@ -14,6 +14,9 @@ class Program
         ChecklistGoal checklistGoal = new ChecklistGoal();
         LoadSave loadSave = new LoadSave();
         List<string> listGoal = new List<string>();
+        List<string> saveGoal = new List<string>(){
+            currentscore.GetTotalScore().ToString()
+        };
 
         while (true)
         {
@@ -28,6 +31,10 @@ Menu Options:
     5. Record Event
     6. Quit
 Select a choice from the menu: ");
+            if (saveGoal.Count() > 0)
+            {
+                saveGoal[0] = currentscore.GetTotalScore().ToString();
+            }
             string choice = Console.ReadLine();
             Console.WriteLine();
             Menu(choice);
@@ -51,6 +58,7 @@ Which type of goal would you like to create? ");
                                 simpleGoal.SetGoalType("Simple Goal");
                                 simpleGoal.CreateGoal();
                                 listGoal.Add($"{listGoal.Count()+1}. {simpleGoal.ShowGoal()}");
+                                saveGoal.Add($"{simpleGoal.GoalDetails()}");
 
                             }
                             else if (selection == "2")
@@ -58,12 +66,14 @@ Which type of goal would you like to create? ");
                                 eternalGoal.SetGoalType("Eternal Goal");
                                 eternalGoal.CreateGoal();
                                 listGoal.Add($"{listGoal.Count()+1}. {eternalGoal.ShowGoal()}");
+                                saveGoal.Add($"{eternalGoal.GoalDetails()}");
                             }
                             else if (selection == "3")
                             {
                                 checklistGoal.SetGoalType("Checklist Goal");
                                 checklistGoal.CreateGoal();
                                 listGoal.Add($"{listGoal.Count()+1}. {checklistGoal.ShowGoal()}");
+                                saveGoal.Add($"{checklistGoal.GoalDetails()}");
                             }
                             break;
                         case "2":
@@ -73,7 +83,7 @@ Which type of goal would you like to create? ");
                             }
                             break;
                         case "3":
-                            loadSave.WriteGoal(listGoal);
+                            loadSave.WriteGoal(saveGoal);
                             break;
                         case "4":
                             break;

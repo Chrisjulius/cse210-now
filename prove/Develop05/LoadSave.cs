@@ -22,18 +22,16 @@ public class LoadSave
         return _totalScore;
     }
 
-    public void WriteGoal(List<string> listGoal)
+    public void WriteGoal(List<string> saveGoal)
     {
         Console.Write("What is the filename for the goal file (.txt)? ");
         _fileName = Console.ReadLine();
 
         using (StreamWriter outputFile = new StreamWriter(_fileName))
-        {
-            outputFile.WriteLine($"{_totalScore}");
-            
-            foreach (string goal in listGoal)
+        {   
+            foreach (string goal in saveGoal)
             {
-                outputFile.WriteLine("");
+                outputFile.WriteLine(goal);
             }
         }
     }

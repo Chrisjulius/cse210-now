@@ -28,6 +28,11 @@ public class ChecklistGoal : Goal
         return $"[ ] {GetGoalName()} ({GetDescription()}) - Completed {_completed}/{_done} times.";
     }
 
+    public override string GoalDetails()
+    {
+        return $"{GetGoalType()}:{GetGoalName()},{GetDescription()},{GetScore()},{_bonus},{_done},{_completed}";
+    }
+
     public int GetDone()
     {
         return _done;

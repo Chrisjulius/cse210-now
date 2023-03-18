@@ -31,6 +31,11 @@ public class Goal
         return $"[ ] {_goalName} ({_description}).";
     }
 
+    public virtual string GoalDetails()
+    {
+        return $"{_goalType}:{_goalName},{_description},{_score}";
+    }
+
     public void SetGoalType(string goaltype)
     {
         _goalType = goaltype;
@@ -48,5 +53,10 @@ public class Goal
     public string GetDescription()
     {
         return _description;
+    }
+
+    public string GetScore()
+    {
+        return _score.ToString();
     }
 }

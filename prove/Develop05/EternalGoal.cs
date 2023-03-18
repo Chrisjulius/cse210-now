@@ -7,4 +7,9 @@ public class EternalGoal : Goal
     {
         
     }
+
+    public override string GoalDetails()
+    {
+        return base.GoalDetails();
+    }
 }
